@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list livro">
 			
+				<g:if test="${livroInstance?.titulo}">
+				<li class="fieldcontain">
+					<span id="titulo-label" class="property-label"><g:message code="livro.titulo.label" default="Titulo" /></span>
+					
+						<span class="property-value" aria-labelledby="titulo-label"><g:fieldValue bean="${livroInstance}" field="titulo"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${livroInstance?.conteudo}">
 				<li class="fieldcontain">
 					<span id="conteudo-label" class="property-label"><g:message code="livro.conteudo.label" default="Conteudo" /></span>
@@ -37,15 +46,6 @@
 					<span id="dataCriacao-label" class="property-label"><g:message code="livro.dataCriacao.label" default="Data Criacao" /></span>
 					
 						<span class="property-value" aria-labelledby="dataCriacao-label"><g:formatDate date="${livroInstance?.dataCriacao}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${livroInstance?.titulo}">
-				<li class="fieldcontain">
-					<span id="titulo-label" class="property-label"><g:message code="livro.titulo.label" default="Titulo" /></span>
-					
-						<span class="property-value" aria-labelledby="titulo-label"><g:fieldValue bean="${livroInstance}" field="titulo"/></span>
 					
 				</li>
 				</g:if>

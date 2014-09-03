@@ -23,38 +23,53 @@
 			</g:if>
 			<ol class="property-list usuario">
 			
-				<g:if test="${usuarioInstance?.dataNascimento}">
+				<g:if test="${usuarioInstance?.conto}">
 				<li class="fieldcontain">
-					<span id="dataNascimento-label" class="property-label"><g:message code="usuario.dataNascimento.label" default="Data Nascimento" /></span>
+					<span id="conto-label" class="property-label"><g:message code="usuario.conto.label" default="Conto" /></span>
 					
-						<span class="property-value" aria-labelledby="dataNascimento-label"><g:formatDate date="${usuarioInstance?.dataNascimento}" /></span>
+						<g:each in="${usuarioInstance.conto}" var="c">
+						<span class="property-value" aria-labelledby="conto-label"><g:link controller="conto" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.email}">
+				<g:if test="${usuarioInstance?.livro}">
 				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="usuario.email.label" default="Email" /></span>
+					<span id="livro-label" class="property-label"><g:message code="usuario.livro.label" default="Livro" /></span>
 					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${usuarioInstance}" field="email"/></span>
+						<g:each in="${usuarioInstance.livro}" var="l">
+						<span class="property-value" aria-labelledby="livro-label"><g:link controller="livro" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.nickName}">
+				<g:if test="${usuarioInstance?.pensamento}">
 				<li class="fieldcontain">
-					<span id="nickName-label" class="property-label"><g:message code="usuario.nickName.label" default="Nick Name" /></span>
+					<span id="pensamento-label" class="property-label"><g:message code="usuario.pensamento.label" default="Pensamento" /></span>
 					
-						<span class="property-value" aria-labelledby="nickName-label"><g:fieldValue bean="${usuarioInstance}" field="nickName"/></span>
+						<g:each in="${usuarioInstance.pensamento}" var="p">
+						<span class="property-value" aria-labelledby="pensamento-label"><g:link controller="pensamento" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.nome}">
+				<g:if test="${usuarioInstance?.nomeAutor}">
 				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="usuario.nome.label" default="Nome" /></span>
+					<span id="nomeAutor-label" class="property-label"><g:message code="usuario.nomeAutor.label" default="Nome Autor" /></span>
 					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${usuarioInstance}" field="nome"/></span>
+						<span class="property-value" aria-labelledby="nomeAutor-label"><g:fieldValue bean="${usuarioInstance}" field="nomeAutor"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${usuarioInstance?.userEmail}">
+				<li class="fieldcontain">
+					<span id="userEmail-label" class="property-label"><g:message code="usuario.userEmail.label" default="User Email" /></span>
+					
+						<span class="property-value" aria-labelledby="userEmail-label"><g:fieldValue bean="${usuarioInstance}" field="userEmail"/></span>
 					
 				</li>
 				</g:if>

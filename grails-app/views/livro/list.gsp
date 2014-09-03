@@ -24,11 +24,11 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="titulo" title="${message(code: 'livro.titulo.label', default: 'Titulo')}" />
+					
 						<g:sortableColumn property="conteudo" title="${message(code: 'livro.conteudo.label', default: 'Conteudo')}" />
 					
 						<g:sortableColumn property="dataCriacao" title="${message(code: 'livro.dataCriacao.label', default: 'Data Criacao')}" />
-					
-						<g:sortableColumn property="titulo" title="${message(code: 'livro.titulo.label', default: 'Titulo')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +36,11 @@
 				<g:each in="${livroInstanceList}" status="i" var="livroInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${livroInstance.id}">${fieldValue(bean: livroInstance, field: "conteudo")}</g:link></td>
+						<td><g:link action="show" id="${livroInstance.id}">${fieldValue(bean: livroInstance, field: "titulo")}</g:link></td>
+					
+						<td>${fieldValue(bean: livroInstance, field: "conteudo")}</td>
 					
 						<td><g:formatDate date="${livroInstance.dataCriacao}" /></td>
-					
-						<td>${fieldValue(bean: livroInstance, field: "titulo")}</td>
 					
 					</tr>
 				</g:each>

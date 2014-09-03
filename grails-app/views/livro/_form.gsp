@@ -2,6 +2,14 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: livroInstance, field: 'titulo', 'error')} required">
+	<label for="titulo">
+		<g:message code="livro.titulo.label" default="Titulo" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="titulo" required="" value="${livroInstance?.titulo}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: livroInstance, field: 'conteudo', 'error')} required">
 	<label for="conteudo">
 		<g:message code="livro.conteudo.label" default="Conteudo" />
@@ -16,13 +24,5 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="dataCriacao" precision="day"  value="${livroInstance?.dataCriacao}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: livroInstance, field: 'titulo', 'error')} ">
-	<label for="titulo">
-		<g:message code="livro.titulo.label" default="Titulo" />
-		
-	</label>
-	<g:textField name="titulo" value="${livroInstance?.titulo}"/>
 </div>
 
