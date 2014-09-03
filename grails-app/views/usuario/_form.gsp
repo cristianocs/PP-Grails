@@ -26,6 +26,22 @@
 	
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'poema', 'error')} ">
+	<label for="poema">
+		<g:message code="usuario.poema.label" default="Poema" />
+		
+	</label>
+	
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'texto', 'error')} ">
+	<label for="texto">
+		<g:message code="usuario.texto.label" default="Texto" />
+		
+	</label>
+	
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nomeAutor', 'error')} ">
 	<label for="nomeAutor">
 		<g:message code="usuario.nomeAutor.label" default="Nome Autor" />

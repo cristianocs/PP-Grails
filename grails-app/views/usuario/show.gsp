@@ -56,6 +56,28 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${usuarioInstance?.poema}">
+				<li class="fieldcontain">
+					<span id="poema-label" class="property-label"><g:message code="usuario.poema.label" default="Poema" /></span>
+					
+						<g:each in="${usuarioInstance.poema}" var="p">
+						<span class="property-value" aria-labelledby="poema-label"><g:link controller="poema" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${usuarioInstance?.texto}">
+				<li class="fieldcontain">
+					<span id="texto-label" class="property-label"><g:message code="usuario.texto.label" default="Texto" /></span>
+					
+						<g:each in="${usuarioInstance.texto}" var="t">
+						<span class="property-value" aria-labelledby="texto-label"><g:link controller="texto" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${usuarioInstance?.nomeAutor}">
 				<li class="fieldcontain">
 					<span id="nomeAutor-label" class="property-label"><g:message code="usuario.nomeAutor.label" default="Nome Autor" /></span>
