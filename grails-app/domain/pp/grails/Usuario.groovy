@@ -5,9 +5,9 @@ class Usuario {
 	String nomeAutor
 	String userEmail
 
-	static belongsTo = [Conto, Livro, Pensamento]
+	static belongsTo = [Conto, Livro, Pensamento, Poema]
 
-	static hasMany = [conto: Conto, livro: Livro, pensamento: Pensamento]
+	static hasMany = [conto: Conto, livro: Livro, pensamento: Pensamento, poema: Poema]
 
 	
 
@@ -15,6 +15,6 @@ class Usuario {
     	conto nullable: true
     	livro nullable: true
     	pensamento nullable: true
-
+    	poema nullable: true
     }
 }

@@ -59,6 +59,10 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
+// do spring-security-core
+grails.plugin.springsecurity.logout.postOnly = false
+grails.plugins.springsecurity.securityConfigType = "Annotation"
+
 environments {
     development {
         grails.logging.jul.usebridge = true
@@ -88,4 +92,16 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+      debug 'SpringSecurityTwitterGrailsPlugin'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.grails.twitter.Person'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.grails.twitter.PersonAuthority'
+grails.plugins.springsecurity.authority.className = 'org.grails.twitter.Authority'
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'pp.grails.Person'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'pp.grails.PersonAuthority'
+grails.plugins.springsecurity.authority.className = 'pp.grails.Authority'
