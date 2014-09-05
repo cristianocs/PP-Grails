@@ -1,7 +1,10 @@
 package pp.grails
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils.*
 
+@Secured(['IS_AUTHENTICATED_FULLY'])
 class PoemaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]

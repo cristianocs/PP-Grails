@@ -1,5 +1,10 @@
 package pp.grails
 
+import grails.plugins.springsecurity.Secured
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils.*
+
+@Secured(['IS_AUTHENTICATED_FULLY'])
+
 class Person {
 
 	transient springSecurityService
