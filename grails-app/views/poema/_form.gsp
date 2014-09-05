@@ -18,12 +18,12 @@
 	<g:textArea name="conteudo" cols="40" rows="5" maxlength="1500" required="" value="${poemaInstance?.conteudo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: poemaInstance, field: 'nomeAutor', 'error')} ">
-	<label for="nomeAutor">
-		<g:message code="poema.nomeAutor.label" default="Nome Autor" />
+<div class="fieldcontain ${hasErrors(bean: poemaInstance, field: 'realName', 'error')} ">
+	<label for="realName">
+		<g:message code="poema.realName.label" default="Real Name" />
 		
 	</label>
-	<g:select name="nomeAutor" from="${pp.grails.Usuario.list()}" multiple="multiple" optionKey="id" size="5" value="${poemaInstance?.nomeAutor*.id}" class="many-to-many"/>
+	<g:select name="realName" from="${pp.grails.Person.list()}" multiple="multiple" optionKey="id" size="5" value="${poemaInstance?.realName*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: poemaInstance, field: 'dataCriacao', 'error')} required">

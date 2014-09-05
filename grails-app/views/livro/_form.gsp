@@ -15,7 +15,15 @@
 		<g:message code="livro.conteudo.label" default="Conteudo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="conteudo" required="" value="${livroInstance?.conteudo}"/>
+	<g:textField name="conteudo" required="" value="${livroInstance?.conteudo}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: livroInstance, field: 'realName', 'error')} ">
+	<label for="realName">
+		<g:message code="livro.realName.label" default="Real Name" />
+		
+	</label>
+	<g:select name="realName" from="${pp.grails.Person.list()}" multiple="multiple" optionKey="id" size="5" value="${livroInstance?.realName*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livroInstance, field: 'dataCriacao', 'error')} required">

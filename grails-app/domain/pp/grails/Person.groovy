@@ -12,11 +12,21 @@ class Person {
 	boolean accountLocked
 	boolean passwordExpired
 
+	
+	static belongsTo = [Conto, Livro, Pensamento, Poema, Texto]
+
+	static hasMany = [conto: Conto, livro: Livro, pensamento: Pensamento, poema: Poema, texto: Texto]
+
 	static transients = ['springSecurityService']
 
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		conto nullable: true
+    	livro nullable: true
+    	pensamento nullable: true
+    	poema nullable: true
+    	texto nullable: true
 	}
 
 	static mapping = {

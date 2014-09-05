@@ -4,13 +4,13 @@ class Conto {
 
 	String titulo
 	String conteudo
-	Date dataCriacao
+	Date dataCriacao 
 	
-	static hasMany = [nomeAutor: Usuario]
+	static hasMany = [realName: Person]
 
     static constraints = {
     	titulo blank:false
     	conteudo size:2..4000, blank:false
-    	nomeAutor nullable: true
+    	realName nullable: true, editable: false
     }
 }

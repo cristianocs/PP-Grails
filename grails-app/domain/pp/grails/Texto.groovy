@@ -6,11 +6,11 @@ class Texto {
 	String conteudo
 	Date dataCriacao
 	
-	static hasMany = [nomeAutor: Usuario]
+	static hasMany = [realName: Person]
 
     static constraints = {
     	titulo blank:false
     	conteudo size:2..15000, blank:false
-    	nomeAutor nullable: true
+    	realName nullable: true
     }
 }

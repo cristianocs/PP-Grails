@@ -41,12 +41,12 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${textoInstance?.nomeAutor}">
+				<g:if test="${textoInstance?.realName}">
 				<li class="fieldcontain">
-					<span id="nomeAutor-label" class="property-label"><g:message code="texto.nomeAutor.label" default="Nome Autor" /></span>
+					<span id="realName-label" class="property-label"><g:message code="texto.realName.label" default="Real Name" /></span>
 					
-						<g:each in="${textoInstance.nomeAutor}" var="n">
-						<span class="property-value" aria-labelledby="nomeAutor-label"><g:link controller="usuario" action="show" id="${n.id}">${n?.encodeAsHTML()}</g:link></span>
+						<g:each in="${textoInstance.realName}" var="r">
+						<span class="property-value" aria-labelledby="realName-label"><g:link controller="person" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

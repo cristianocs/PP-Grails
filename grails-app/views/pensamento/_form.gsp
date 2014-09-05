@@ -15,15 +15,15 @@
 		<g:message code="pensamento.conteudo.label" default="Conteudo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="conteudo" maxlength="150" required="" value="${pensamentoInstance?.conteudo}"/>
+	<g:textField name="conteudo" maxlength="150" required="" value="${pensamentoInstance?.conteudo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: pensamentoInstance, field: 'nomeAutor', 'error')} ">
-	<label for="nomeAutor">
-		<g:message code="pensamento.nomeAutor.label" default="Nome Autor" />
+<div class="fieldcontain ${hasErrors(bean: pensamentoInstance, field: 'realName', 'error')} ">
+	<label for="realName">
+		<g:message code="pensamento.realName.label" default="Real Name" />
 		
 	</label>
-	<g:select name="nomeAutor" from="${pp.grails.Usuario.list()}" multiple="multiple" optionKey="id" size="5" value="${pensamentoInstance?.nomeAutor*.id}" class="many-to-many"/>
+	<g:select name="realName" from="${pp.grails.Person.list()}" multiple="multiple" optionKey="id" size="5" value="${pensamentoInstance?.realName*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: pensamentoInstance, field: 'dataCriacao', 'error')} required">

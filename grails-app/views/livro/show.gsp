@@ -41,6 +41,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${livroInstance?.realName}">
+				<li class="fieldcontain">
+					<span id="realName-label" class="property-label"><g:message code="livro.realName.label" default="Real Name" /></span>
+					
+						<g:each in="${livroInstance.realName}" var="r">
+						<span class="property-value" aria-labelledby="realName-label"><g:link controller="person" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${livroInstance?.dataCriacao}">
 				<li class="fieldcontain">
 					<span id="dataCriacao-label" class="property-label"><g:message code="livro.dataCriacao.label" default="Data Criacao" /></span>
