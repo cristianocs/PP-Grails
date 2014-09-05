@@ -15,7 +15,7 @@
 		<g:message code="livro.conteudo.label" default="Conteudo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="conteudo" required="" value="${livroInstance?.conteudo}"/>
+	<g:textArea name="conteudo" required="" value="${livroInstance?.conteudo}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: livroInstance, field: 'realName', 'error')} ">

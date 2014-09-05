@@ -15,7 +15,7 @@
 		<g:message code="pensamento.conteudo.label" default="Conteudo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="conteudo" maxlength="150" required="" value="${pensamentoInstance?.conteudo}"/>
+	<g:textArea name="conteudo" maxlength="150" required="" value="${pensamentoInstance?.conteudo}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: pensamentoInstance, field: 'realName', 'error')} ">
